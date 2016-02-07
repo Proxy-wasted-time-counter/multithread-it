@@ -7,6 +7,11 @@ import WorkerStore from '../../src/worker-store';
 import { EventsHandlers as ContainerEventsHandlers } from './components/Container';
 import AppWorker from 'worker!./worker';
 
-let appContainer = document.querySelector('#app-container');
-app(appContainer, ContainerEventsHandlers, AppWorker);
+const appContainer = document.querySelector('#app-container');
+
+app(
+  appContainer,
+  ContainerEventsHandlers,
+  AppWorker
+);
 
