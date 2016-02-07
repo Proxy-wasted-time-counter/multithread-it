@@ -1,0 +1,9 @@
+{
+  "extends": "google",
+  "globals": {
+    "__DEV__": true
+  },
+  "rules": {
+    "no-use-before-define": false
+  }
+}

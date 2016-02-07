@@ -1,0 +1,7 @@
+{
+  "preset": "google",
+  "maximumLineLength": 180,
+  "esnext": true,
+  "excludeFiles": ["build/**", "node_modules/**"],
+  "validateQuoteMarks": null
+}
