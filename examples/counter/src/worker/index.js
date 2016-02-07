@@ -1,9 +1,9 @@
-import { init, subscribeAppToChanges } from '../../../src/worker';
+import multithreadIt from 'multithread-it';
 
 import * as reducers from './reducers';
 import * as Counter from '../components/Counter';
 
 const app = new Counter.Component();
 
-subscribeAppToChanges(app, reducers);
+multithreadIt.Worker.subscribeAppToChanges(app, reducers);
 

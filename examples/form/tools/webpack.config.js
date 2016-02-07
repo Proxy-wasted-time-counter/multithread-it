@@ -31,7 +31,7 @@ export default {
   entry: {
     app: [
       ...(WATCH ? ['webpack-hot-middleware/client'] : []),
-      './src/index.js',
+      './src/app.js',
     ],
   },
   output: {
@@ -86,7 +86,7 @@ export default {
         test: /\.jsx?$/,
         include: [
           path.resolve(__dirname, '../src'),
-          path.resolve(__dirname, '../examples'),
+          path.resolve(__dirname, '../node_modules/multithread-it'),
         ],
         loader: 'babel-loader',
       },

@@ -1,5 +1,5 @@
 import path from 'path';
-import replace from 'replace';
+import fs from 'fs';
 import Promise from 'bluebird';
 import watch from './lib/watch';
 import colors from 'colors/safe';
@@ -11,23 +11,19 @@ import colors from 'colors/safe';
 async function copy() {
   const ncp = Promise.promisify(require('ncp'));
 
+  if (!fs.existsSync('./build')) {
+    fs.mkdirSync('./build');
+  }
+
   const watchedPaths = new Map([
-    ['package.json', 'build/package.json'],
+    ['src/index.html/', 'build/index.html'],
   ]);
   const promises = [];
   watchedPaths.forEach((dest, source) => {
-    console.log('Copy %s to %s', source, dest);
+    console.log('[COPY] : Copy %s to %s', source, dest);
     promises.push(ncp(source, dest));
   });
   await Promise.all(promises);
-
-  replace({
-    regex: '"start".*',
-    replacement: '"start": "node server.js"',
-    paths: ['build/package.json'],
-    recursive: false,
-    silent: false,
-  });
 
   if (global.WATCH) {
     const watchPattern = Array.from(watchedPaths.keys());

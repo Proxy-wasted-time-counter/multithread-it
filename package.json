@@ -1,6 +1,6 @@
 {
   "name": "multithread-it",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "A components oriented virtual dom in a worker rendering",
   "main": "src/index.js",
   "dependencies": {
@@ -51,7 +51,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "babel-node tools/run serve",
-    "start": "babel-node tools/run start"
+    "start": "babel-node tools/run start",
+    "build": "babel-node tools/run build"
   },
   "repository": {
     "type": "git",

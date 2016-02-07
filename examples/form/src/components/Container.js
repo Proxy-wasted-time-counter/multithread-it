@@ -1,4 +1,4 @@
-import { observeStore } from '../../../src/worker/store';
+import multithreadIt from 'multithread-it';
 
 import {Component as FormComponent, EventsHandlers as FormEvents} from './Form';
 import {Component as ListComponent} from './List';
@@ -15,7 +15,7 @@ export class Component {
   }
 
   render() {
-    observeStore(this._store, state => state.datas, datas => this._datas = datas);
+    multithreadIt.observeStore(this._store, state => state.datas, datas => this._datas = datas);
 
     return (
       <div>
