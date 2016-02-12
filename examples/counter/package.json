@@ -1,6 +1,6 @@
 {
   "name": "multithread-it-example-counter",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Simple counter example",
   "main": "app.js",
   "scripts": {
@@ -9,7 +9,7 @@
   "author": "Kevin Pennarun <kevin.pennarun@gmail.com> (http://kevin-pennarun.org)",
   "license": "ISC",
   "dependencies": {
-    "multithread-it": "0.0.3"
+    "multithread-it": "0.0.4"
   },
   "devDependencies": {
     "babel": "^6.3.26",
