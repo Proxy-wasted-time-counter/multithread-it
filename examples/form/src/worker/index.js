@@ -1,9 +1,9 @@
-import multithreadIt from 'multithread-it';
+import { Worker } from 'multithread-it';
 
 import * as reducers from './reducers';
-import * as Container from '../components/Container';
+import { Component as ContainerComponent } from '../components/Container';
 
-const app = new Container.Component();
+const app = new ContainerComponent();
 
-multithreadIt.Worker.subscribeAppToChanges(app, reducers);
+Worker.subscribeAppToChanges(app, reducers);
 

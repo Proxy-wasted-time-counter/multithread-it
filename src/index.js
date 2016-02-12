@@ -3,7 +3,7 @@ import WorkerStore from './worker-store';
 import * as Worker from './worker';
 import { observeStore } from './worker/store';
 
-export default {
+export {
   App,
   WorkerStore,
   Worker,

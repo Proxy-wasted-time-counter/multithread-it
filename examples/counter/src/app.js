@@ -1,11 +1,11 @@
-import multithreadIt from 'multithread-it';
+import { App } from 'multithread-it';
 
 import { EventsHandlers as CounterEventsHandlers } from './components/Counter';
 import AppWorker from 'worker!./worker';
 
 const appContainer = document.querySelector('#app-container');
 
-multithreadIt.App(
+App(
   appContainer,
   CounterEventsHandlers,
   AppWorker

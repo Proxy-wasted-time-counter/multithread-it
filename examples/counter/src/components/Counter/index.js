@@ -1,4 +1,4 @@
-import multithreadIt from 'multithread-it';
+import { observeStore } from 'multithread-it';
 
 import * as ActionTypes from '../../constants/ActionTypes';
 
@@ -12,7 +12,7 @@ export class Component {
   }
 
   render() {
-    multithreadIt.observeStore(this._store, state => state.counter, count => this._count = count);
+    observeStore(this._store, state => state.counter, count => this._count = count);
 
     return (
       <div>
