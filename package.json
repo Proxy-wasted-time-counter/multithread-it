@@ -1,7 +1,7 @@
 {
   "name": "multithread-it",
   "version": "0.0.4",
-  "description": "A components oriented virtual dom in a worker rendering",
+  "description": "A components oriented virtual dom in a worker rendering solution",
   "main": "lib/index.js",
   "dependencies": {
     "babel-polyfill": "^6.3.14",
