@@ -8,15 +8,17 @@ import * as ActionTypes from '../../constants/ActionTypes';
 
 const COMP_ID = 'COUNTER';
 
-export class Component extends MultithreadItComponent{
+export class Component extends MultithreadItComponent {
   _count = 0;
 
-  render() {
+  onInit() {
     this.watch(
       state => state.counter,
       count => this._count = count
     );
+  }
 
+  render() {
     return (
       <div>
         <button data-click={COMP_ID + '_DECR'}>-</button>

@@ -33,6 +33,7 @@ export function subscribeAppToChanges(appToRegister, reducers) {
 
   const app = appToRegister;
   app.setStore(store);
+  app.initialize();
   let tree = app.render();
 
   const vdomChange = () => {

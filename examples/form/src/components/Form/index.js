@@ -1,8 +1,13 @@
+import {
+  MultithreadItComponent,
+  MultithreadItEventsHandler
+} from 'multithread-it';
+
 import * as ActionTypes from '../../constants/ActionTypes';
 
 const COMP_ID = 'FORM';
 
-export class Component {
+export class Component extends MultithreadItComponent {
 
   render() {
     return (
@@ -15,9 +20,9 @@ export class Component {
   }
 }
 
-export class EventsHandlers {
+export class EventsHandlers extends MultithreadItEventsHandler  {
   constructor(workerStore) {
-    this._worker = workerStore;
+    super(workerStore);
   }
 
   register(eventsMap) {

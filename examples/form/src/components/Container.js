@@ -1,25 +1,30 @@
-import { observeStore } from 'multithread-it';
+import {
+  MultithreadItComponent,
+  MultithreadItEventsHandler,
+  observeStore
+} from 'multithread-it';
 
 import {Component as FormComponent, EventsHandlers as FormEvents} from './Form';
 import {Component as ListComponent} from './List';
 
-export class Component {
+export class Component extends MultithreadItComponent {
   _datas = [];
 
   constructor() {
+    super();
+
     this._form = new FormComponent();
     this._list = new ListComponent();
   }
-  setStore(store) {
-    this._store = store;
-  }
 
-  render() {
-    observeStore(
-      this._store,
+  onInit() {
+    this.watch(
       state => state.datas,
       datas => this._datas = datas
     );
+  }
+
+  render() {
 
     return (
       <div>
@@ -31,9 +36,10 @@ export class Component {
   }
 }
 
-export class EventsHandlers {
+export class EventsHandlers extends MultithreadItEventsHandler {
   constructor(workerStore) {
-    this._worker = workerStore;
+    super(workerStore);
+
     this._formEvents = new FormEvents(this._worker);
   }
 

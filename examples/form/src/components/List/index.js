@@ -1,5 +1,6 @@
+import { MultithreadItComponent } from 'multithread-it';
 
-export class Component {
+export class Component extends MultithreadItComponent {
 
   render(values) {
     const dataElement = data => <li>{data.title} - {data.description}</li>;
