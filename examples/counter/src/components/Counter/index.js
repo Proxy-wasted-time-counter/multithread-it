@@ -1,18 +1,21 @@
-import { observeStore } from 'multithread-it';
+import {
+  MultithreadItComponent,
+  MultithreadItEventsHandler,
+  observeStore
+} from 'multithread-it';
 
 import * as ActionTypes from '../../constants/ActionTypes';
 
 const COMP_ID = 'COUNTER';
 
-export class Component {
+export class Component extends MultithreadItComponent{
   _count = 0;
 
-  setStore(store) {
-    this._store = store;
-  }
-
   render() {
-    observeStore(this._store, state => state.counter, count => this._count = count);
+    this.watch(
+      state => state.counter,
+      count => this._count = count
+    );
 
     return (
       <div>
@@ -24,14 +27,16 @@ export class Component {
   }
 }
 
-export class EventsHandlers {
-  constructor(workerStore) {
-    this._worker = workerStore;
-  }
+export class EventsHandlers extends MultithreadItEventsHandler {
 
-  register(eventsMap) {
-    const clickEvents = [e => this._decr(e), e => this._incr(e)];
-    eventsMap.set('click', clickEvents);
+  constructor(workerStore) {
+    super(workerStore);
+
+    this.addEventHandlers(
+      'click',
+      e => this._decr(e),
+      e => this._incr(e)
+    );
   }
 
   _decr(e) {
