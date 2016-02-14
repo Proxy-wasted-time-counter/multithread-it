@@ -14,21 +14,19 @@ Your component is the composition of element.
 
 A `Component` working in the application WebWorker
 ```jsx
-import multithreadIt from 'multithread-it';
+import { MultithreadItComponent } from 'multithread-it';
 
-class Component {
+class Component extends MultithreadItComponent {
   _label; 
-  setStore(store) {
-    this._store = store;
+
+  onInit() {
+    this.watch(
+      state => state.label,
+      label => this._label = label
+    );
   }
 
   render() {
-    multithreadIt.observeStore(
-        this._store,
-        state => state.label,
-        label => this._label = label
-    );
-
     return (
       <div>
         {this._label}
@@ -41,14 +39,16 @@ class Component {
 
 An `EventsHandlers` listening to component events in the UI-thread
 ```jsx
-class EventsHandlers {
-  constructor(workerStore) {
-    this._worker = workerStore;
-  }
+import { MultithreadItEventsHandler } from 'multithread-it';
 
-  register(eventsMap) {
-    const clickEvents = [e => this._click(e)];
-    eventsMap.set('click', clickEvents);
+class EventsHandlers  extends MultithreadItEventsHandler {
+  constructor(workerStore) {
+    super(workerStore);
+
+    this.addEventHandlers(
+      'click',
+      e => this._click(e)
+    );
   }
 
   _click(e) {

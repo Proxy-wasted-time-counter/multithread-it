@@ -1,7 +1,6 @@
 import {
   MultithreadItComponent,
-  MultithreadItEventsHandler,
-  observeStore
+  MultithreadItEventsHandler
 } from 'multithread-it';
 
 import * as ActionTypes from '../../constants/ActionTypes';
