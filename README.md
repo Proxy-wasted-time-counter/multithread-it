@@ -10,7 +10,7 @@ Events are propagated from the UI thread to the application worker using an abst
 
 ### Example
 
-Your component is the composition of element.
+Your component is the composition of two elements.
 
 A `Component` working in the application WebWorker
 ```jsx
@@ -51,7 +51,7 @@ class EventsHandlers  extends MultithreadItEventsHandler {
     );
   }
 
-  _click(e) {
+    _click(e) {
     const target = e.target;
     if (target['data-click'] === 'EVENT_CLICK') {
       e.preventDefault();
