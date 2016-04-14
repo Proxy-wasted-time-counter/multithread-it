@@ -7,6 +7,7 @@ import * as WorkerMessageTypes from '../constants/WorkerMessageTypes';
 
 let currentVdom;
 let store;
+let reduxActionsCreator;
 
 onmessage = ({data}) => {
   switch (data.type) {
@@ -14,7 +15,9 @@ onmessage = ({data}) => {
       currentVdom = fromJson(data.vdom);
       return;
     case WorkerMessageTypes.EVENT:
-      store.dispatch({type: data.data.action, data: data.data.data});
+      store.dispatch(
+        reduxActionsCreator[data.message.action](data.message.data)
+      );
       return;
     default:
       console.error('Don\'t know what to do with', data);
@@ -28,8 +31,9 @@ const postMessageVdomPatches = patch => {
   });
 };
 
-export function subscribeAppToChanges(appToRegister, reducers) {
-  store = configureStore(reducers);
+export function subscribeAppToChanges(appToRegister, actionsCreator, reducers, initialState) {
+  store = configureStore(reducers, initialState);
+  reduxActionsCreator = actionsCreator;
 
   const app = appToRegister;
   app.setStore(store);

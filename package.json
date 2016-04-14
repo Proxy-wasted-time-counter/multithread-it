@@ -1,6 +1,6 @@
 {
   "name": "multithread-it",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A components oriented virtual dom in a worker rendering solution",
   "main": "lib/index.js",
   "dependencies": {
@@ -13,7 +13,7 @@
     "pseudo-worker": "^1.0.2",
     "redux": "^3.3.0",
     "redux-logger": "^2.5.0",
-    "redux-thunk": "^1.0.3",
+    "redux-thunk": "^2.0.1",
     "vdom-as-json": "^1.0.8",
     "vdom-serialized-patch": "^1.0.4",
     "vdom-to-html": "^2.2.0",

@@ -22,7 +22,7 @@ export default class WorkerStore {
   dispatchEvent(action, data) {
     this._worker.postMessage({
       type: WorkerMessageTypes.EVENT,
-      data: {
+      message: {
         action,
         data
       }

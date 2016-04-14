@@ -23,11 +23,11 @@ export class Component extends MultithreadItComponent {
 export class EventsHandlers extends MultithreadItEventsHandler  {
   constructor(workerStore) {
     super(workerStore);
-  }
 
-  register(eventsMap) {
-    const submitEvents = [e => this._submit(e)];
-    eventsMap.set('submit', submitEvents);
+    this.addEventHandlers(
+      'submit',
+      e => this._submit(e)
+    );
   }
 
   _submit(e) {
