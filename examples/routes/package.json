@@ -1,7 +1,7 @@
 {
-  "name": "multithread-it-example-form",
+  "name": "multithread-it-example-route",
   "version": "0.0.7",
-  "description": "A simple form with a very large list",
+  "description": "Route example",
   "main": "app.js",
   "scripts": {
     "start": "babel-node tools/run start"

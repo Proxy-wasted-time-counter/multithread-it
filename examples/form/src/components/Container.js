@@ -1,7 +1,6 @@
 import {
   MultithreadItComponent,
-  MultithreadItEventsHandler,
-  observeStore
+  MultithreadItEventsHandler
 } from 'multithread-it';
 
 import {Component as FormComponent, EventsHandlers as FormEvents} from './Form';

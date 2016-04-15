@@ -6,6 +6,8 @@ import { observeStore } from './worker/store';
 import MultithreadItComponent from './component/MultithreadItComponent';
 import MultithreadItEventsHandler from './component/MultithreadItEventsHandler';
 
+import * as Router from './router';
+
 export {
   App,
   WorkerStore,
@@ -13,4 +15,5 @@ export {
   observeStore,
   MultithreadItComponent,
   MultithreadItEventsHandler,
+  Router,
 };
