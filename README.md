@@ -78,3 +78,4 @@ For more informations about how **Multithread-it** should be used.
 Have a look to examples:
  - [Simple Counter](https://github.com/Proxy-wasted-time-counter/multithread-it/tree/master/examples/counter)
  - [Form](https://github.com/Proxy-wasted-time-counter/multithread-it/tree/master/examples/form)
+ - [Router](https://github.com/Proxy-wasted-time-counter/multithread-it/tree/master/examples/routes)
