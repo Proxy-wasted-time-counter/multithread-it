@@ -1,6 +1,6 @@
 {
   "name": "multithread-it",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A components oriented virtual dom in a worker rendering solution",
   "main": "lib/index.js",
   "dependencies": {

@@ -48,8 +48,6 @@ export function subscribeAppToChanges(appToRegister, actionsCreator, reducers, i
     postMessageVdomPatches(patch);
 
     tree = newTree;
-
-    console.log('[WORKER] : App rendered in', performance.now() - startRendering);
   };
   store.subscribe(vdomChange);
   init(tree);

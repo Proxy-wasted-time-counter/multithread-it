@@ -1,6 +1,6 @@
 {
   "name": "multithread-it-example-route",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Route example",
   "main": "app.js",
   "scripts": {

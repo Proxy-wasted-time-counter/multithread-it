@@ -16,6 +16,9 @@ export class Component extends MultithreadItComponent {
       throw new Error('Missing route definition with id ${routeId}');
     }
     const componentInstance = new routeConf.component();
+    componentInstance.setStore(this._store);
+    componentInstance.initialize();
+
     return componentInstance.render();
   }
 }
