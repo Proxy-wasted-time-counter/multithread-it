@@ -1,6 +1,6 @@
 {
   "name": "multithread-it-example-form",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A simple form with a very large list",
   "main": "app.js",
   "scripts": {

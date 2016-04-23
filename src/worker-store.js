@@ -7,7 +7,6 @@ export default class WorkerStore {
     this._worker = new AppWorker();
 
     this._worker.onmessage = ({data}) => {
-      console.log('New message from appworker', data);
       switch (data.type) {
         case WorkerMessageTypes.INIT_VDOM:
           return initDom(fromJson(data.vdom));

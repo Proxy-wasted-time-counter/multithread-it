@@ -51,6 +51,7 @@ export function subscribeAppToChanges(appToRegister, actionsCreator, reducers, i
   };
   store.subscribe(vdomChange);
   init(tree);
+  return store;
 }
 
 export function init(tree) {
