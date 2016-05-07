@@ -7,7 +7,7 @@ import eventsHandlerFactory from './events-handler';
 let app;
 export default function app(rootNode, AppEventsHandlers, AppWorker) {
   const initVdom = vdom => {
-    rootNode.appendChild(create(vdom));
+    rootNode.replaceChild(create(vdom), rootNode.firstElementChild);
     app = rootNode.firstElementChild;
     console.log('[MAIN] : App initialized in', performance.now());
   };
