@@ -46,7 +46,7 @@ export function subscribeAppToChanges(appToRegister, actionsCreator, reducers, i
   app.setStore(store);
   app.initialize();
 
-  initFromCache(startTime)
+  initFromCache()
   .then(vdom => {
     tree = fromJson(vdom);
   })
@@ -81,7 +81,7 @@ export function init(jsonVdom) {
   });
 }
 
-function initFromCache(startTime) {
+function initFromCache() {
 
   return cache(APP)
   .then(appCache => {
