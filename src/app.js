@@ -1,4 +1,4 @@
-import {h, create} from 'virtual-dom';
+import { h, create } from 'virtual-dom';
 import { patch as applyPatch } from 'vdom-serialized-patch';
 
 import WorkerStore from './worker-store';
